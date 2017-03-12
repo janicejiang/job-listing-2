@@ -1,38 +1,36 @@
-<div class="dropdown clearfix pull-right">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    排序
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-    <li>
-      <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
-    </li>
-    <li>
-      <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
-    </li>
-    <li>
-      <%= link_to("按照发表时间排序", jobs_path) %>
-    </li>
-  </ul>
-</div>
+<section id="jobs">
+  <div class="container">
+    <div class="dropdown clearfix pull-right">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Sort
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+        <li>
+          <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+        </li>
+        <li>
+          <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+        </li>
+        <li>
+          <%= link_to("按照发表时间排序", jobs_path) %>
+        </li>
+      </ul>
+    </div>
 
-<table class="table table-boldered table-striped" >
-  <thead>
-    <tr>
-      <td>职缺</td>
-      <td>薪资下限</td>
-      <td>薪资上限</td>
-      <td>刊登时间</td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @jobs.each do |job| %>
-    <tr>
-      <td><%= link_to(job.title, job_path(job)) %></td>
-      <td><%= job.wage_lower_bound %></td>
-      <td><%= job.wage_upper_bound %></td>
-      <td><%= job.created_at %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+    <ul id="timeline">
+      <% @jobs.each do |job| %>
+      <%= link_to(job_path(job)) do %>
+      <li class="listing clearfix">
+        <div class="image_wrapper"></div>
+        <div class="info">
+          <span class="job_title"><%= job.title %></span>
+          <span class="job_info"><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> <span>&bull;</span> <%= job.created_at %></span>
+        </div>
+        <span class="job_type full_time">Full-Time</span>
+      </li>
+      <% end %>
+      <% end %>
+    </ul>
+  </div>
+</section>

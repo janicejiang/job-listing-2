@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Job2</title>
+        <title>RailsJobs</title>
         <%= csrf_meta_tags %>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,10 +9,12 @@
     </head>
 
     <body>
+      <div class="border"></div>
       <%= render "common/navbar" %>
-      <%= render "common/flashes" %>
+      <div class="container">
+        <%= render "common/flashes" %>
+      </div>
       <%= yield %>
-
       <%= render "common/footer" %>
     </body>
 </html>

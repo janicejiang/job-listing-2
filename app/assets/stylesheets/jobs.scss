@@ -1,3 +1,174 @@
 // Place all the styles related to the jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// - - - - - - - - - - Variables - - - - - - - - - - //
+$main:        #34314c;
+$secondary:   #9592ad;
+$border:      #d9dee9;
+$highlight_1: #fd7473; // Red color
+$highlight_2: #fec951; // Yellow color
+$highlight_3: #47b8e0; // Blue color
+$highlight_4: #9f68d0; // Purple color
+
+#jobs {
+  .btn {
+    background-color: #47b8e0;
+    border: 1px solid transparent;
+  }
+}
+
+#timeline {
+  max-width: 768px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
+  padding: 0;
+  a {
+    text-decoration: none;
+  }
+  .listing {
+    background: white;
+    border: 1px solid $border;
+    border-radius: .3em;
+    padding: 1em;
+    margin-bottom: 1em;
+    position: relative;
+    z-index: 1;
+    display: table;
+    width: 96%;
+    img, .info, .job_type {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: .9em;
+      color: $secondary;
+    }
+    .image_wrapper {
+      width: 60px;
+      height: 60px;
+      display: block;
+      margin: 0 auto;
+      border-radius: .25em;
+      background-color: $highlight_2;
+    }
+    .info {
+      line-height: 1.25;
+      width: 640px;
+      padding-left: 25px;
+      .job_title {
+        font-weight: 700;
+        color: $main;
+        font-size: 1.5em;
+      }
+      .job_info {
+        color: $secondary;
+        display: block;
+        span {
+          margin: 0 .75em;
+        }
+      }
+    }
+    .job_type {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: .75em;
+      position: relative;
+      white-space: nowrap;
+      padding-top: .6em;
+      width: 100px;
+      &:before {
+        content: " ";
+        background: $highlight_1;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        position: absolute;
+        left: -20px;
+        top: 28px;
+      }
+    }
+    .full_time {
+      color: $highlight_2;
+      &:before {
+        background: $highlight_2;
+      }
+    }
+    .freelance {
+      color: $highlight_3;
+      &:before {
+        background: $highlight_3;
+      }
+    }
+    transition: all .3s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 2px 40px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// - - - - - - - - - - 768- - - - - - - - - - - //
+@media only screen and (max-width: 768px) {
+  .main_header {
+    margin: 3em 0;
+  }
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    img {
+      float: none;
+    }
+    h1 {
+      float: none;
+      margin: 0;
+      font-size: 1.1em;
+      padding-top: 1.1em;
+    }
+  }
+
+  .nav {
+    float: none;
+    text-align: center;
+    padding-top: 1.75em;
+    a {
+      margin: 0 .5em;
+    }
+    .current {
+      font-weight: 700;
+      color: $main;
+    }
+  }
+}
+
+// - - - - - - - - - - 600- - - - - - - - - - - //
+@media only screen and (max-width: 600px) {
+  #timeline {
+    .listing {
+      .image_wrapper {
+        margin-right: 1em;
+        width: 50px;
+        height: 50px;
+      }
+      .info {
+        width: 100%;
+        padding: .4em 0 0 0;
+        .job_title {
+          font-size: 1.25em;
+        }
+      }
+      .job_type {
+        display: none;
+      }
+    }
+  }
+}
+
+#show_job {
+  .btn {
+    background-color: #47b8e0;
+    border: 1px solid transparent;
+    margin-top: 30px;
+  }
+}
