@@ -31,7 +31,7 @@
         </div>
         <div class="info">
           <span class="job_title"><%= job.title %></span>
-          <span class="job_info"><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> <span>&bull;</span> <%= job.created_at.strftime("%Y-%m-%d") %></span>
+          <span class="job_info"><%= job.company %> <span>&bull;</span> <%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> <span>&bull;</span> <%= job.created_at.strftime("%b %d") %></span>
         </div>
 
         <% if job.location == "远程" %>
@@ -44,5 +44,7 @@
       <% end %>
       <% end %>
     </ul>
+
+    <p class="statement">声明: 首页设计来自 Mackenzie Child 的 Youtube 教程</p>
   </div>
 </section>

@@ -104,6 +104,13 @@ $highlight_4: #9f68d0; // Purple color
   }
 }
 
+.statement {
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(119,119,119);
+}
+
 // - - - - - - - - - - 768- - - - - - - - - - - //
 @media only screen and (max-width: 768px) {
   .main_header {
