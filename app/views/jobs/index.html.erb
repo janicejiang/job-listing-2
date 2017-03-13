@@ -24,16 +24,22 @@
       <li class="listing clearfix">
         <div class="image_wrapper">
           <% if job.image.present? %>
-            <%= image_tag(job.image.logo.url) %>
+          <%= image_tag(job.image.logo.url, class: "img-responsive") %>
           <% else %>
-            <%= image_tag("http://oji7id3lo.bkt.clouddn.com/60x60.png") %>
+          <%= image_tag("http://oji7id3lo.bkt.clouddn.com/60x60.png", class: "img-responsive") %>
           <% end %>
         </div>
         <div class="info">
           <span class="job_title"><%= job.title %></span>
-          <span class="job_info"><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> <span>&bull;</span> <%= job.created_at %></span>
+          <span class="job_info"><%= job.wage_lower_bound %> - <%= job.wage_upper_bound %> <span>&bull;</span> <%= job.created_at.strftime("%Y-%m-%d") %></span>
         </div>
-        <span class="job_type full_time">Full-Time</span>
+
+        <% if job.location == "远程" %>
+          <span class="job_type remote"><%= job.location %></span>
+        <% else %>
+          <span class="job_type location"><%= job.location %></span>
+        <% end %>
+
       </li>
       <% end %>
       <% end %>

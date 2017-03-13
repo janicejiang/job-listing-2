@@ -67,13 +67,12 @@ $highlight_4: #9f68d0; // Purple color
       }
     }
     .job_type {
-      text-transform: uppercase;
       font-weight: 700;
       font-size: .75em;
       position: relative;
       white-space: nowrap;
       padding-top: .6em;
-      width: 100px;
+      width: 40px;
       &:before {
         content: " ";
         background: $highlight_1;
@@ -85,13 +84,13 @@ $highlight_4: #9f68d0; // Purple color
         top: 28px;
       }
     }
-    .full_time {
+    .location {
       color: $highlight_2;
       &:before {
         background: $highlight_2;
       }
     }
-    .freelance {
+    .remote {
       color: $highlight_3;
       &:before {
         background: $highlight_3;
