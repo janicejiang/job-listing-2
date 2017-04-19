@@ -1,18 +1,12 @@
 // Place all the styles related to the jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// - - - - - - - - - - Variables - - - - - - - - - - //
-$main:        #34314c;
-$secondary:   #9592ad;
-$border:      #d9dee9;
-$highlight_1: #fd7473;
-$highlight_2: #fec951;
-$highlight_3: #47b8e0;
-$highlight_4: #9f68d0;
+
+@import "colors";
 
 #jobs {
   .btn {
-    background-color: #47b8e0;
+    background-color: $highlight_3;
     border: 1px solid transparent;
   }
 }
@@ -171,7 +165,7 @@ $highlight_4: #9f68d0;
 
 #show_job {
   .btn {
-    background-color: #47b8e0;
+    background-color: $highlight_3;
     border: 1px solid transparent;
     margin-top: 30px;
   }

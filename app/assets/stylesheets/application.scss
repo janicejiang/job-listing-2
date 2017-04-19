@@ -19,16 +19,9 @@
 @import "bootstrap";
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css?family=Lato');
-@import url(http://fonts.googleapis.com/css?family=Roboto);
 
-// - - - - - - - - - - Variables - - - - - - - - - - //
-$main:        #34314c;
-$secondary:   #9592ad;
-$border:      #d9dee9;
-$highlight_1: #fd7473; // Red color
-$highlight_2: #fec951; // Yellow color
-$highlight_3: #47b8e0; // Blue color
-$highlight_4: #9f68d0; // Purple color
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+@import "colors";
 
 body {
   font-family: 'Lato', sans-serif;
