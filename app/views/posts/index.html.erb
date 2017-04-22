@@ -9,7 +9,7 @@
     </div>
 
     <% @posts.each do |post| %>
-      <h3><%= link_to(post.title, post_path(post)) %></h3>
+      <h3><%= link_to(post.title, post_path(post), class: "link") %></h3>
       <p>Submitted about <%= time_ago_in_words(post.created_at) %> by <%= post.user.display_name %></p>
       <div class="btn-group">
         <a class="btn btn-default btn-sm" href="<%= post.url %>">

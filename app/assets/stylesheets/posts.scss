@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "colors";
+
 #posts {
   .container {
     max-width: 768px;
@@ -9,6 +11,12 @@
     margin-right: auto;
     .form {
       margin-bottom: 50px;
+    }
+    .link {
+      color: black;
+    }
+    p {
+      color: $secondary;
     }
   }
 }
