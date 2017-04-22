@@ -75,6 +75,14 @@ footer {
   }
 }
 
+// - - - - - - - - - - 600- - - - - - - - - - - //
+@media only screen and (max-width: 600px) {
+  .navbar {
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
 /****** LOGIN MODAL ******/
 .loginmodal-container {
   padding: 30px;
