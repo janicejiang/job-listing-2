@@ -2,7 +2,11 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, :only => [:create, :destroy]
 
   def index
-    @posts = Post.order("id DESC").all    # 新贴文放前面
+    @posts = Post.order("id DESC").includes(:user).all    # 新贴文放前面
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -26,7 +30,7 @@ class PostsController < ApplicationController
       Like.create( :user => current_user, :post => @post)
     end
 
-    redirect_to posts_path
+    redirect_to :back
   end
 
   def unlike
@@ -34,7 +38,7 @@ class PostsController < ApplicationController
     like = @post.find_like(current_user)
     like.destroy
 
-    redirect_to posts_path
+    redirect_to :back
   end
 
   protected
