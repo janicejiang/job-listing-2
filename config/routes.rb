@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :posts do
     member do
@@ -24,5 +24,4 @@ Rails.application.routes.draw do
       resources :resumes
     end
   end
-
 end
