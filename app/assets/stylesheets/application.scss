@@ -82,3 +82,33 @@ footer {
     margin-bottom: 10px;
   }
 }
+
+// - - - - - - - - - - LOGIN - - - - - - - - - - - //
+#login {
+  .thumbnail {
+    max-width: 35em;
+    margin: auto;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0 0.5em $border;
+    padding: 0;
+
+    .heading {
+      background: $highlight_2;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 0.8em;
+      margin-top: 0;
+    }
+
+    .content {
+      padding: 1.5em;
+      .btn-info {
+        background-color: $highlight_2;
+        border: transparent;
+      }
+    }
+  }
+}
