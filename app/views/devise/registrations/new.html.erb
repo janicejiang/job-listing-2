@@ -11,14 +11,14 @@
             <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
             <%= f.input :password_confirmation, required: true %>
           </div>
-          <br>
+
           <div class="row">
-            <div class="col-xs-6">
+            <div class="col-sm-6">
               <div class="form-actions">
                 <%= f.button :submit, "Sign up", class: "btn btn-lg btn-info" %>
               </div>
             </div>
-            <div class="col-xs-6">
+            <div class="col-sm-6">
               <%= render "devise/shared/github" %>
             </div>
           </div>
